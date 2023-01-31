@@ -1,0 +1,53 @@
+{
+  "name": "frostyck",
+  "version": "1.0.0",
+  "description": " In English: In short, Frostyck is a user-side web development tool that can be used with various frameworks and front-end libraries, such as Angular, React and Vue, or even a simple HTML file. Frostyck is based on the idea that in their own browser, the developer can create HTML elements, define their dimensions, style them with their preferred framework or CSS library and all this with just a few clicks. Em Português Brasileiro: Resumindo, Frostyck é uma ferramenta de desenvolvimento web do lado do usuário que pode ser usada com vários frameworks e bibliotecas front-end, como Angular, React e Vue, ou até mesmo um simples arquivo HTML. Frostyck é baseado na idéia de que em seu próprio navegador, o desenvolvedor pode criar elementos HTML, definir suas dimensões, estilizá-los com seu framework preferido ou biblioteca CSS e tudo isso com apenas alguns cliques.",
+  "private": "true",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server",
+    "s": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Box-Cod/projeto-javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "frostyck",
+    "js",
+    "es",
+    "front-end",
+    "ecmascript",
+    "frontstylizedclicks"
+  ],
+  "author": "jonas-brito <jonas2004brito@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Box-Cod/projeto-javascript/issues"
+  },
+  "homepage": "https://github.com/Box-Cod/projeto-javascript#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "node-sass": "^8.0.0",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.3.0-alpha1",
+    "bootstrap-icons": "^1.10.3"
+  }
+}

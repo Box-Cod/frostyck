@@ -1,24 +1,22 @@
-// let body = document.body;
-let allElementsPage = [];
-allElementsPage.push(document.querySelectorAll('*'));
+import 'bootstrap';
+import '../css/styles.scss';
+import { toolBar } from './components/DraggableToolBarElement-component/draggableToolBarElement';
 
-let elementStyle = document.createElement('style');
+let allElementsPage = [];
+allElementsPage.push( document.querySelectorAll( '*' ) );
+let elementStyle = document.createElement( 'style' );
 
 elementStyle.id = randomNumber();
+let elementStyleId = elementStyle.id;
 //manipular pseudo-elementos via javascript
 
-// if ( body.id == null && body.id == undefined && body.id === ' ') {
-
-//   body.id = randomNumber();
-// }
-
-allElementsPage.forEach((nodeElementsList) => {
+allElementsPage.forEach( ( nodeElementsList ) => {
   
-nodeElementsList.forEach((nodeElement) => {
+nodeElementsList.forEach( ( nodeElement ) => {
   
   
   let i = 0;
-  while (i < nodeElement.children.length) {
+  while ( i < nodeElement.children.length ) {
 
       if ( 
       nodeElement.children.item(i).localName !== 'html' && nodeElement.children.item(i).localName !== 'head' && 
@@ -26,13 +24,10 @@ nodeElementsList.forEach((nodeElement) => {
       nodeElement.children.item(i).localName !== 'title' && nodeElement.children.item(i).localName !== 'link' && 
       nodeElement.children.item(i).localName !== 'script' ) 
       {
-        let elementBody = document.querySelector('body')
-        elementBody.appendChild(elementStyle)
-  console.log(elementBody)
-        // console.log(nodeElement.children.item(i).style = '::after')
-        // console.log(nodeElement.children.item(i).style.border = '1px solid blue')
-        // // console.log(nodeElement.children.item(i).style.listStyle = "none")
-        // console.log(nodeElement.children.item(i).className)
+        let elementsBody = document.querySelector('body')
+        elementsBody.appendChild(elementStyle)
+        elementsBody.appendChild(toolBar)
+        
       }
     
     i++
@@ -42,6 +37,9 @@ nodeElementsList.forEach((nodeElement) => {
 })
 
 });
+
+
+
 // allElementsBody.forEach((elements) => {
 
 //   let i = 0;
@@ -124,3 +122,4 @@ function randomNumber() {
 //   console.log( allElementsOfPage );
 
 // }
+
