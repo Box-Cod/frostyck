@@ -1,44 +1,60 @@
 import 'bootstrap';
 import '../css/styles.scss';
-import { toolBar } from './components/DraggableToolBarElement-component/draggableToolBarElement';
+import { elementStyle, toolBar } from './components/DraggableToolBarElement-component/draggableToolBarElement';
 
-let allElementsPage = [];
-allElementsPage.push( document.querySelectorAll( '*' ) );
-let elementStyle = document.createElement( 'style' );
+// let allElementsPage = [];
+// allElementsPage.push( document.querySelectorAll( '*' ) );
+let elementsBody = document.querySelector('body')
 
-elementStyle.id = randomNumber();
-let elementStyleId = elementStyle.id;
-//manipular pseudo-elementos via javascript
-
-allElementsPage.forEach( ( nodeElementsList ) => {
+// allElementsPage.forEach( ( nodeElementsList ) => {
   
-nodeElementsList.forEach( ( nodeElement ) => {
+// nodeElementsList.forEach( ( nodeElement ) => {
   
   
-  let i = 0;
-  while ( i < nodeElement.children.length ) {
+//   let i = 0;
+//   while ( i < nodeElement.children.length ) {
 
-      if ( 
-      nodeElement.children.item(i).localName !== 'html' && nodeElement.children.item(i).localName !== 'head' && 
-      nodeElement.children.item(i).localName !== 'meta' && nodeElement.children.item(i).localName !== 'base' && 
-      nodeElement.children.item(i).localName !== 'title' && nodeElement.children.item(i).localName !== 'link' && 
-      nodeElement.children.item(i).localName !== 'script' ) 
-      {
-        let elementsBody = document.querySelector('body')
-        elementsBody.appendChild(elementStyle)
-        elementsBody.appendChild(toolBar)
+//       if ( 
+//       nodeElement.children.item(i).localName !== 'html' && nodeElement.children.item(i).localName !== 'head' && 
+//       nodeElement.children.item(i).localName !== 'meta' && nodeElement.children.item(i).localName !== 'base' && 
+//       nodeElement.children.item(i).localName !== 'title' && nodeElement.children.item(i).localName !== 'link' && 
+//       nodeElement.children.item(i).localName !== 'script' ) 
+//       {
         
-      }
+
     
-    i++
-  }
+//       }
+    
+//     i++
+//   }
   
 
-})
+// })
 
+// });
+
+elementsBody.addEventListener('click', (element) => {
+  if (element.target.title === 'elementSelectToolButton' || element.target.title === 'iconElementSelect') {
+    if (elementsBody.style.cursor === 'crosshair') {
+      
+      elementsBody.style.cursor = 'auto';
+    } else {
+      elementsBody.style.cursor = 'crosshair'
+      elementsBody.addEventListener('click',(element) => {
+        elementStyle.textContent = `
+          .selectElement {  
+            border: 1px solid red;
+          }
+        `;
+        element.target.classList.add('selectElement');
+
+        console.log(element.target.style);
+      });
+    }
+  }
 });
 
-
+elementsBody.appendChild(toolBar)
 
 // allElementsBody.forEach((elements) => {
 
@@ -98,7 +114,7 @@ nodeElementsList.forEach( ( nodeElement ) => {
 // }
 
 
-function randomNumber() {
+export function randomNumber() {
   // code inspired by: https://codigofonte.org/gerando-id-aleatorio-em-javascript/
   
   return Math.floor( Math.floor( Math.random() * Date.now() ) * Math.random() ).toString( 36 );
