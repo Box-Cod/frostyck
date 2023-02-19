@@ -1,16 +1,18 @@
 import 'bootstrap';
 import './../../../css/styles.scss';
-import { selectTool } from './tools/selectElement';
+
+// import { selectTool } from './tools/selectElement';
 import { randomNumber } from '../../index';
-import { buttonDrag } from './tools/buttonDragToolBar';
+import { elementDrag } from './tools/buttonDragToolBar';
+import { elementAdd } from './tools/addElement';
 
 
 //estilo
 //manipular estilos e pseudo-elementos via javascript
-export let elementStyle = document.createElement( 'style' );
+let elementStyle = document.createElement( 'style' );
 
 /*estilos personalizados do componente*/
-elementStyle.textContent = `
+elementStyle.textContent = elementStyle.textContent + `
 
 div button[title].fros-btn-bg:hover {
   background-color: #01316e;
@@ -23,7 +25,7 @@ elementStyle.id = randomNumber();
 let elementStyleId = elementStyle.id;
 
 
-let draggableToolBarElement = document.createElement('div');
+let draggableToolBarElement = document.createElement( 'div' );
 draggableToolBarElement.classList.add('position-absolute','p-1','m-1','d-flex','flex-sm-column','flex-md-column','flex-lg-column','bg-primary','border', 'border-4','border-primary-subtle','rounded-pill');
 draggableToolBarElement.style.maxHeight = "75vh";
 draggableToolBarElement.style.maxWidth = "75vw";
@@ -32,41 +34,41 @@ draggableToolBarElement.style.minHeight = '1vh';
 draggableToolBarElement.id = randomNumber();
 draggableToolBarElement.title = "draggableToolBarElement";
 
+draggableToolBarElement.appendChild( elementStyle );
 
+draggableToolBarElement.appendChild( elementAdd.button );
+// draggableToolBarElement.appendChild( selectTool );
+draggableToolBarElement.appendChild( elementDrag.button );
 
-//logica
+const elementToolbarWrapper = {
 
-// function dragStart(element) {
-//   let mouseY = Math.abs(element.pageY);
-//   let mouseX = Math.abs(element.pageX);
+  element: draggableToolBarElement,
+  style: elementStyle,
+  
+  children: [
 
-//   dragX = mouseX - draggableToolBarElement.offsetLeft;
-//   dragY = mouseY - draggableToolBarElement.offsetTop;
+    {
 
-//   addEventListener("mousemove", dragMove);
-//   addEventListener("mouseup", dragEnd);
-// }
- 
-// function dragMove(element) {
-//   let mouseY = Math.abs(element.pageY);
-//   let mouseX = Math.abs(element.pageX);
+      name: elementDrag.button.title,
+      element: elementDrag,
+      button: elementDrag.button,
+      icon: elementDrag.icon
 
-//   draggableToolBarElement.style.left = (mouseX - dragX) + 'px';
-//   draggableToolBarElement.style.top = (mouseY - dragY) + 'px';
+    },
 
-// }
+    {
 
-// function dragEnd() {
-//   removeEventListener("mousemove", dragMove); 
-//   removeEventListener("mouseup", dragEnd);
-// }
+      name: elementAdd.button.title,
+      element: elementAdd,
+      button: elementAdd.button,
+      icon: elementAdd.icon
 
-// draggableToolBarElement.addEventListener("mousedown", buttonDrag);
+    }
 
-draggableToolBarElement.appendChild(elementStyle);
+  ]
 
-draggableToolBarElement.appendChild(selectTool);
-draggableToolBarElement.appendChild(buttonDrag);
+};
 
-
-export const toolBar = draggableToolBarElement;
+export default elementToolbarWrapper;
+// export const toolBarStyle = elementStyle;
+// export const toolBarWrapper = draggableToolBarElement;
