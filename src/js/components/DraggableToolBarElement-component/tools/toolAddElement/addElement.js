@@ -1,5 +1,5 @@
 import 'bootstrap';
-import './../../../../css/styles.scss';
+import '../../../../../css/styles.scss';
 
 let buttonAddElement = document.createElement( 'button' );
 

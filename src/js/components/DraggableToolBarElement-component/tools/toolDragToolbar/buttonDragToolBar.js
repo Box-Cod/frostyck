@@ -1,4 +1,4 @@
-import elementToolbarWrapper  from "../draggableToolBarElement";
+import elementToolbarWrapper  from "../../draggableToolBarElement";
 
 
 let buttonDragToolBar = document.createElement( 'button' ), dragX , dragY;
@@ -13,7 +13,6 @@ let iconButtonDragToolBar = document.createElement( 'i' );
 
 iconButtonDragToolBar.classList.add( 'bi', 'fs-6', 'p-1', 'bi-arrows-move', 'text-light' );
 iconButtonDragToolBar.title = 'iconButtonDragToolBar';
-
 
 //logica
 function dragStart( element ) {
