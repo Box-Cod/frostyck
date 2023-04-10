@@ -2,8 +2,7 @@ import 'bootstrap';
 import '../css/styles.scss';
 
 import  elementToolbarWrapper  from './components/DraggableToolBarElement-component/draggableToolBarElement';
-import { listElements } from './components/DraggableToolBarElement-component/tools/toolAddElement/listElements';
-
+import { elementList } from './components/DraggableToolBarElement-component/tools/toolAddElement/listElements';
 
 let elementsBody = document.querySelector( 'body' );
 
@@ -18,9 +17,7 @@ elementStyle.textContent = elementStyle.textContent + `
 
 `;
 
-elementsBody.appendChild( listElements );
 elementsBody.appendChild( elementToolbarWrapper.element );
-
 elementsBody.appendChild( elementStyle );
 
 export function randomNumber() {
