@@ -4,11 +4,11 @@ import '../css/styles.scss';
 import  elementToolbarWrapper  from './components/DraggableToolBarElement-component/draggableToolBarElement';
 import { elementList } from './components/DraggableToolBarElement-component/tools/toolAddElement/listElements';
 
-let elementsBody = document.querySelector( 'body' );
+const elementsBody: HTMLElement = document.body;
 
-let elementStyle = document.createElement( 'style' );
+const elementStyle: HTMLStyleElement = document.createElement( 'style' );
 
-elementStyle.id = randomNumber();
+// elementStyle.id = randomNumber();
 elementStyle.textContent = elementStyle.textContent + `
 
 .selectElement {  
@@ -20,10 +20,10 @@ elementStyle.textContent = elementStyle.textContent + `
 elementsBody.appendChild( elementToolbarWrapper.element );
 elementsBody.appendChild( elementStyle );
 
-export function randomNumber() {
+// export function randomNumber(): string {
 
-  // code inspired by: https://codigofonte.org/gerando-id-aleatorio-em-javascript/
+//   // code inspired by: https://codigofonte.org/gerando-id-aleatorio-em-javascript/
   
-  return Math.floor( Math.floor( Math.random() * Date.now() ) * Math.random() ).toString( 36 );
+//   return Math.floor( Math.floor( Math.random() * Date.now() ) * Math.random() ).toString( 36 );
 
-}
+// }

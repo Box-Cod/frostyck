@@ -1,7 +1,7 @@
 import 'bootstrap';
 import './../../../css/styles.scss';
 
-import { randomNumber } from '../../index';
+// import { randomNumber } from '../../index';
 import { elementDrag } from './tools/toolDragToolbar/buttonDragToolBar';
 import { elementAdd } from './tools/toolAddElement/addElement';
 import { elementList } from './tools/toolAddElement/listElements';
@@ -21,7 +21,7 @@ div button[title].fros-btn-bg:hover {
 
 `;
 
-elementStyle.id = randomNumber();
+// elementStyle.id = randomNumber();
 
 let draggableToolBarElement = document.createElement( 'div' );
 draggableToolBarElement.classList.add('position-absolute', 'dropend','p-1','m-1','p-sm-1','m-sm-1','p-md-1','m-md-1','p-xl-1','m-xl-1','d-flex','flex-sm-column','flex-md-column','flex-lg-column','bg-primary','border', 'border-4','border-primary-subtle','rounded-pill');
@@ -29,7 +29,7 @@ draggableToolBarElement.style.maxHeight = "75vh";
 draggableToolBarElement.style.maxWidth = "75vw";
 draggableToolBarElement.style.minWidth = '1vw';
 draggableToolBarElement.style.minHeight = '1vh';
-draggableToolBarElement.id = randomNumber();
+// draggableToolBarElement.id = randomNumber();
 draggableToolBarElement.title = "draggableToolBarElement";
 
 draggableToolBarElement.appendChild( elementStyle );

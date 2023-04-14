@@ -1,7 +1,9 @@
 import elementToolbarWrapper  from "../../draggableToolBarElement";
 
 
-let buttonDragToolBar = document.createElement( 'button' ), dragX , dragY;
+const buttonDragToolBar: HTMLButtonElement = document.createElement( 'button' );
+let dragX: number;
+let dragY: number;
 dragX = 0;
 dragY = 0;
 
@@ -9,13 +11,13 @@ buttonDragToolBar.classList.add( 'btn', 'btn-primary', 'fros-btn-bg', 'p-1', 'mt
 buttonDragToolBar.type = 'button';
 buttonDragToolBar.title = 'buttonDragToolBar';
 
-let iconButtonDragToolBar = document.createElement( 'i' );
+const iconButtonDragToolBar: HTMLElement = document.createElement( 'i' );
 
 iconButtonDragToolBar.classList.add( 'bi', 'fs-6', 'p-1', 'bi-arrows-move', 'text-light' );
 iconButtonDragToolBar.title = 'iconButtonDragToolBar';
 
 //logica
-function dragStart( element ) {
+function dragStart( element: any ) {
 
     let mouseY = Math.abs( element.pageY );
     let mouseX = Math.abs( element.pageX );
@@ -27,7 +29,7 @@ function dragStart( element ) {
     addEventListener( "mouseup", dragEnd );
 }
    
-function dragMove( element ) {
+function dragMove( element: any ) {
 
     let mouseY = Math.abs( element.pageY );
     let mouseX = Math.abs( element.pageX );
